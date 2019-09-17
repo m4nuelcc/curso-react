@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import {BrowserRouter, Route} from 'react-router-dom'
 import CojerAjax from './components/Test'
-import Bienvenida from './components/Bienvenida'
+import Cabecera from './components/Cabecera'
 
 
 export const ajaxGet = (url, cb) => {
@@ -16,7 +16,19 @@ export const ajaxGet = (url, cb) => {
     .then( data => { cb(data) } )
     // devuelve Promise, dejamos el último then() para que lo haga el Component  
   }
-  
+  class Bienvenida extends React.Component {
+    render() {
+        return (
+            <div>
+                 <Cabecera/>
+                 <CojerAjax/>
+
+            </div>
+        
+        )
+    }
+}
+
 
 const rutas =(
     <BrowserRouter>
